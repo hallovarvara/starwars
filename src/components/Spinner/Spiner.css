@@ -5,7 +5,7 @@
 .ldio-6ta3n0covzn > div > div {
   transform-origin: 100px 100px;
   animation: ldio-6ta3n0covzn 2.6315789473684212s linear infinite;
-  opacity: 0.54
+  opacity: 1
 }
 .ldio-6ta3n0covzn > div > div > div {
   position: absolute;
@@ -41,6 +41,7 @@
   transform: rotate(0deg);
 }
 .loadingio-spinner-wedges-3toohbunksb {
+  margin: 0 auto;
   width: 200px;
   height: 200px;
   display: inline-block;
