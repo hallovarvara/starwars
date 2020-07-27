@@ -1,23 +1,14 @@
 import React from 'react';
 
-import {transformKeyToName} from '../../helpers/functions';
+import Record from '../../basicComponents/Record';
 
 const ItemDetailsView = ({item}) => {
   const { id, name, imagePath, ...details } = item;
 
-  const renderDetails = (key, i) => {
-    if (item[key]) {
-      return (
-        <li className="list-group-item" key={i}>
-          <span className="term">{transformKeyToName(key)}</span>
-          <span className="value">{item[key]}</span>
-        </li>
-      )
-    }
-  };
-
   const detailsList = Object.keys(details)
-    .map((key, i) => renderDetails(key, i))
+    .map((propName, i) => item[propName]
+      && <Record value={item[propName]} propName={propName} key={i} />
+    );
 
   return(
     <div className="item-details card">

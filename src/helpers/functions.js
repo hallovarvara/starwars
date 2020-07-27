@@ -1,4 +1,4 @@
-export const transformKeyToName = (key) => key
+export const transformPropKeyToName = (key) => key
   .split('')
   .map((l, index) => {
     let newLetter;

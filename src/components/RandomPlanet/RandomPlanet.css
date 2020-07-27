@@ -8,6 +8,7 @@
     height: 150px;
     border-radius: 10px;
     margin-right: 1rem;
+    background-size: cover;
 }
 
 .random-planet .list-group {

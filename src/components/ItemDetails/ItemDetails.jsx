@@ -5,7 +5,7 @@ import './ItemDetails.css';
 import ItemDetailsView from './ItemDetailsView';
 import Spinner from '../Spinner';
 
-export default class CharDetails extends Component {
+export default class ItemDetails extends Component {
   state = {
     item: null,
     isItemLoaded: false,
