@@ -8,7 +8,6 @@ import Spinner from '../Spinner';
 import ErrorIndicator from '../ErrorIndicator';
 
 export default class RandomPlanet extends Component {
-
   swapiService = new SwapiService();
 
   state = {

@@ -5,10 +5,9 @@ import './App.css';
 import Header from '../Header';
 import RandomPlanet from '../RandomPlanet';
 import ItemsList from '../ItemsList';
-import ErrorIndicator from '../ErrorIndicator';
 import ItemDetails from '../ItemDetails/ItemDetails';
 import Row from '../../basicComponents/Row';
-
+import ErrorBoundry from '../ErrorBoundry';
 import SwapiService from '../../services/SwapiService';
 
 export default class App extends Component {
@@ -16,13 +15,6 @@ export default class App extends Component {
 
   state = {
     selectedItem: 2,
-    hasError: false,
-  }
-
-  componentDidCatch() {
-    this.setState({
-      hasError: true,
-    })
   }
 
   onItemSelected = (id) => {
@@ -41,10 +33,6 @@ export default class App extends Component {
     `${name} (${model})`;
 
   render() {
-    if (this.state.hasError) {
-      return <ErrorIndicator />
-    }
-
     const itemsList = (
       <ItemsList
         onItemSelected={this.onItemSelected}
@@ -61,11 +49,11 @@ export default class App extends Component {
     );
 
     return (
-      <>
+      <ErrorBoundry>
         <Header />
         <RandomPlanet />
         <Row left={itemsList} right={itemDetails} />
-      </>
+      </ErrorBoundry>
     );
   }
 }

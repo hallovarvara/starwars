@@ -7,12 +7,13 @@ const PlanetView = ({planet}) => {
     rotationPeriod,
     diameter,
     id,
+    imagePath,
   } = planet;
 
   return (
     <>
       <img className="planet-image"
-           src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+           src={imagePath}
            alt={`${name} planet`}/>
       <div>
         <h4>{name}</h4>
