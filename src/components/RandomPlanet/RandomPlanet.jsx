@@ -51,7 +51,7 @@ export default class RandomPlanet extends Component {
     const { planet, isLoading, isError } = this.state;
 
     return (
-      <div className="random-planet jumbotron rounded">
+      <div className="random-planet jumbotron d-flex align-items-center justify-content-center">
         {
           isError
             ? <ErrorIndicator />

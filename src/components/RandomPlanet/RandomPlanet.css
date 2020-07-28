@@ -3,10 +3,14 @@
     padding: 1rem;
 }
 
+.random-planet.jumbotron {
+  margin-bottom: 0;
+}
+
 .random-planet .planet-image {
     width: 150px;
     height: 150px;
-    border-radius: 10px;
+    border-radius: 500px;
     margin-right: 1rem;
     background-size: cover;
 }

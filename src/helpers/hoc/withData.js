@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Spinner from '../../components/Spinner';
 
-const withData = (View, getData) => {
+const withData = (View, getData, renderValue) => {
   return class extends Component {
     state = {
       data: null,
@@ -23,7 +23,7 @@ const withData = (View, getData) => {
         return <Spinner/>
       }
 
-      return <View {...this.props} data={data} />;
+      return <View {...this.props} data={data} renderValue={renderValue} />;
     }
   }
 }

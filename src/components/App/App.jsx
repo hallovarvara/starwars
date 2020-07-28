@@ -4,17 +4,16 @@ import './App.css';
 
 import Header from '../Header';
 import RandomPlanet from '../RandomPlanet';
-import ItemsList from '../ItemsList';
-import ItemDetails from '../ItemDetails/ItemDetails';
 import Row from '../../basicComponents/Row';
 import ErrorBoundry from '../ErrorBoundry';
-import SwapiService from '../../services/SwapiService';
+
+import { CharsList, PlanetsList, StarshipsList } from '../Lists';
+
+import {CharDetails, PlanetDetails, StarshipDetails} from '../Details';
 
 export default class App extends Component {
-  swapiService = new SwapiService()
-
   state = {
-    selectedItem: 2,
+    selectedItem: 5,
   }
 
   onItemSelected = (id) => {
@@ -23,36 +22,24 @@ export default class App extends Component {
     })
   }
 
-  renderCharInList = ({name, gender, birthYear}) =>
-    `${name} (${gender}, ${birthYear})`;
-
-  renderPlanetInList = ({name, diameter}) =>
-    `${name} (diameter ${diameter})`;
-
-  renderStarshipInList = ({name, model}) =>
-    `${name} (${model})`;
-
   render() {
     const itemsList = (
-      <ItemsList
+      <CharsList
         onItemSelected={this.onItemSelected}
-        getData={this.swapiService.getAllChars}
-        renderItem={this.renderCharInList}
       />
     );
 
     const itemDetails = (
-      <ItemDetails
-        id={this.state.selectedItem}
-        getData={this.swapiService.getChar}
-      />
+      <CharDetails id={this.state.selectedItem} />
     );
 
     return (
       <ErrorBoundry>
-        <Header />
-        <RandomPlanet />
-        <Row left={itemsList} right={itemDetails} />
+        <div className="starwars-app">
+          <Header />
+          <RandomPlanet />
+          <Row left={itemsList} right={itemDetails} />
+        </div>
       </ErrorBoundry>
     );
   }

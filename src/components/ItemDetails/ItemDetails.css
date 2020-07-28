@@ -1,23 +1,21 @@
 .item-details {
   display: flex;
-  margin-top: 1rem;
   flex-direction: row;
-  padding: 1rem;
 }
 
-.item-details .card-body {
-  padding-top: 0;
-  padding-bottom: 0;
+.item-details.card {
+  border: none;
+  background-color: #3C3C3C;
 }
 
 .item-details .image {
   width: 30%;
-  height: 30%;
-  border-radius: 10px;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .item-details .list-group-item {
   padding: 0.25rem 0;
+  background: transparent;
 }
 
 .item-details .list-group-item .term {
